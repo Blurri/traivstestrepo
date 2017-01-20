@@ -3,9 +3,6 @@
 
 /*global jasmine */
 var SpecReporter = require('jasmine-spec-reporter');
-var config = {
-
-}
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -13,8 +10,7 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'browserName': 'chrome'
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -32,8 +28,5 @@ exports.config = {
   },
   onPrepare: function() {
     jasmine.getEnv().addReporter(new SpecReporter());
-  },
-  sauceUser : process.env.SAUCE_USERNAME,
-  sauceKey : process.env.SAUCE_ACCESS_KEY,
-  sauceBuild : process.env.TRAVIS_BUILD_NUMBER,
+  }
 };
