@@ -1,7 +1,7 @@
 #.travis.yml
 
 dist: trusty
-sudo: required
+sudo: false
 language: node_js
 node_js:
   - "5.11"
@@ -19,6 +19,7 @@ before_script:
 
 script:
   - ng test --watch=false
+  - ng e2e
   - ng build --prod
 
 after_success:
